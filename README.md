@@ -58,4 +58,4 @@ sdkInstance.startSMFeedbackActivityForResult(this, [SAMPLE_REQUEST_CODE], [SAMPL
 ```
 
 ####Issues and Bugs
-Please submit any issues with the SDK to us via Github issues, for more critical bugs, email [support@surveymonkey.com](mailto:support@surveymonkey.com)
+Please submit any issues with the SDK to us via Github issues.
