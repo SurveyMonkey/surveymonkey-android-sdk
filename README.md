@@ -4,6 +4,9 @@ The SurveyMonkey Feedback SDK for Android allows app developers to integrate Sur
 
 We strive to fix bugs and add new features as quickly as possible. Please watch our Github repo to stay up to date.
 
+####Sign Up for the Private Beta
+The SDK is currently in Private Beta -- to get on the waiting list: click [Here](https://surveymonkey.wufoo.com/forms/k1qq7e6o0h1ijz0/)
+
 To download the SDK, either clone the SDK
 ```bash
 git clone https://github.com/SurveyMonkey/surveymonkey-android-sdk.git
