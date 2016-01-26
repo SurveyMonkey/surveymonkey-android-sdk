@@ -4,14 +4,16 @@ The SurveyMonkey Feedback SDK for Android allows app developers to integrate Sur
 
 We strive to fix bugs and add new features as quickly as possible. Please watch our Github repo to stay up to date.
 
-####Sign Up for the Private Beta
-The SDK is currently in Private Beta -- to get on the waiting list: click [Here](https://surveymonkey.wufoo.com/forms/k1qq7e6o0h1ijz0/)
-
 To download the SDK, either clone the SDK
 ```bash
 git clone https://github.com/SurveyMonkey/surveymonkey-android-sdk.git
 ```
 Or download the [latest release](https://github.com/SurveyMonkey/surveymonkey-android-sdk/releases)
+
+### Setting up your SDK Collector
+To use the SurveyMonkey Feedback SDK, you must first create a survey on [ SurveyMonkey.com](https://www.surveymonkey.com).
+1. Once you have created your SurveyMonkey survey, navigate to the **Collect** tab and select **+ New Collector > SDK** from the menu on the righthand side.
+2. Click **Generate** - The code you generate is your **Survey Hash**, you'll use this to point the SDK to your survey in the steps below.
 
 ### Integrating with Android Studio
 
@@ -27,7 +29,7 @@ That's it!
 For a detailed example, take a look at the **SimpleActivity** sample project in our Github repo
 
 
-####Important
+#### Important
 The SurveyMonkey Feedback SDK makes use of the `startActivityForResult(Intent, int)` method lifecycle - thus, if you want to consume the respondent data returned by our SDK, you'll need to implement `onActivityResult()` in whichever activity you present surveys from.
 
 The survey respondent data is returned as JSON. To parse it, implement the following in your `onActivityResult()`:
@@ -41,23 +43,31 @@ If `resultCode != RESULT_OK` in your `onActivityResult`, an error has occurred. 
 SMError e = (SMError) intent.getSerializableExtra(SM_ERROR);
 ```
 
-####Getting Started
+#### Getting Started
 1. `import com.surveymonkey.surveymonkeyandroidsdk.SurveyMonkey;` and (for error handling)
 `import com.surveymonkey.surveymonkeyandroidsdk.utils.SMError;`
 2. Initialize the SDK like so: `private SurveyMonkey sdkInstance = new SurveyMonkey();`
 
-####The Intercept Modal
+#### The Intercept Modal
 To kick off the SurveyMonkey Feedback SDK Intercept process, call:
 ```java
 sdkInstance.onStart(this, [SAMPLE_APP_NAME], [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH]);
 ```
 from your main activity. This will check to see if the user should be prompted to take your survey (i.e. `if (timeSinceLastSurveyPrompt > maxTimeIntervalBetweenSurveyPrompts)`). The copy of the prompts, as well as the time intervals, can be customized, see our docs for more information.
 
+If you are a **Platinum** user and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
+```java
+sdkInstance.onStart(this, [SAMPLE_APP_NAME], [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH], [SAMPLE_CUSTOM_VARIABLES_DICTIONARY]);
+```
 
-####Presenting a Survey to the User
+#### Presenting a Survey to the User
 To present a survey for the user to take, call
 ```java
 sdkInstance.startSMFeedbackActivityForResult(this, [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH]);
+```
+Again, if you are a **Platinum** user and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
+```java
+sdkInstance.startSMFeedbackActivityForResult(this, [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH], [SAMPLE_CUSTOM_VARIABLES_DICTIONARY]);
 ```
 
 ####Issues and Bugs
