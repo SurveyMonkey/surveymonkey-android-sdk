@@ -1,0 +1,2 @@
+configurations.create("default")
+artifacts.add("default", file('surveymonkey_android_sdk-release.aar'))
