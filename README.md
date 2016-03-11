@@ -15,6 +15,21 @@ Download the [latest release](https://github.com/SurveyMonkey/surveymonkey-andro
 ```bash
 git clone https://github.com/SurveyMonkey/surveymonkey-android-sdk.git
 ```
+**OR**
+
+Install via Maven (jCenter):
+```xml
+<dependency>
+  <groupId>com.surveymonkey</groupId>
+  <artifactId>surveymonkey-android-sdk</artifactId>
+  <version>1.0.3</version>
+  <type>pom</type>
+</dependency>
+```
+or Gradle (jCenter):
+```groovy
+compile 'com.surveymonkey:surveymonkey-android-sdk:1.0.3'
+```
 
 #### Step 2: Set up your SDK Collector
 You must create your survey and set up your SDK Collector in [www.surveymonkey.com](https://www.surveymonkey.com).
