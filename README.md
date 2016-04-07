@@ -22,13 +22,13 @@ Install via Maven (jCenter):
 <dependency>
   <groupId>com.surveymonkey</groupId>
   <artifactId>surveymonkey-android-sdk</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
   <type>pom</type>
 </dependency>
 ```
 or Gradle (jCenter):
 ```groovy
-compile 'com.surveymonkey:surveymonkey-android-sdk:1.0.3'
+compile 'com.surveymonkey:surveymonkey-android-sdk:1.0.4'
 ```
 
 #### Step 2: Set up your SDK Collector
