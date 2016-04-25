@@ -14,4 +14,11 @@
         android:id="@+id/button"
         android:layout_gravity="center_horizontal"
         android:onClick="takeSurvey"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Take Feedback Survey (Fragment Example)"
+        android:id="@+id/button_fragment"
+        android:layout_gravity="center_horizontal"
+        android:onClick="takeSurveyFragment"/>
 </LinearLayout>

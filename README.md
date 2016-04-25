@@ -94,6 +94,15 @@ If you are a Platinum user and want to include custom variables with each survey
 sdkInstance.startSMFeedbackActivityForResult(this, [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH], [SAMPLE_CUSTOM_VARIABLES_DICTIONARY]);
 ```
 
+##### Optional: Fragments
+
+**New in version 1.0.5:** The SMFeedbackFragment class allows you to embed our SDK into an Activity, rather than displaying it in a fullscreen activity. To instantiate an SMFeedbackFragment use:
+```java
+sdkInstance.newSMFeedbackFragmentInstance([SAMPLE_SURVEY_HASH]);
+```
+
+For a helpful example, see our [Simple Survey](https://github.com/SurveyMonkey/surveymonkey-android-sdk/tree/master/SimpleSurvey) sample project and see our [documentation](http://surveymonkey.github.io/surveymonkey-android-sdk/) for more details.
+
 #### Issues and Bugs
 Please submit any issues with the SDK to us via Github issues. We strive to fix bugs as quickly as possible. We plan to add Maven repository integration in the coming months. Watch our Github repo to stay up to date for new features.
 

@@ -1,4 +1,4 @@
-package com.surveymonkey.simplesurvey;
+package com.surveymonkey.surveymonkeyandroidsdkexample;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import com.surveymonkey.surveymonkeyandroidsdk.SurveyMonkey;
 import com.surveymonkey.surveymonkeyandroidsdk.utils.SMError;
-import com.surveymonkey.surveymonkeyandroidsdkexample.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -52,6 +51,12 @@ public class SimpleActivity extends Activity {
         //This is how you display a survey for the user to take
         // Remember: you must supply the parent activity (e.g. this), your own request code (to differentiate from other activities), and the collector hash of the SDK collector you've created at SurveyMonkey.com
         s.startSMFeedbackActivityForResult(this, SM_REQUEST_CODE, SURVEY_HASH);
+    }
+
+    public void takeSurveyFragment(View view) {
+        //This is how you display a survey for the user to take
+        // Remember: you must supply the parent activity (e.g. this), your own request code (to differentiate from other activities), and the collector hash of the SDK collector you've created at SurveyMonkey.com
+        SimpleFragmentActivity.startActivity(this, SURVEY_HASH);
     }
 
     @Override

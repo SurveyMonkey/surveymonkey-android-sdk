@@ -10,13 +10,17 @@
         android:icon="@mipmap/ic_launcher"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.surveymonkey.simplesurvey.SimpleActivity"
+            android:name=".SimpleActivity"
             android:label="Simple Activity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".SimpleFragmentActivity"
+            android:label="Simple Fragment Activity">
         </activity>
 
     </application>
