@@ -22,13 +22,13 @@ Install via Maven (jCenter):
 <dependency>
   <groupId>com.surveymonkey</groupId>
   <artifactId>surveymonkey-android-sdk</artifactId>
-  <version>1.0.5</version>
+  <version>1.0.6</version>
   <type>pom</type>
 </dependency>
 ```
 or Gradle (jCenter):
 ```groovy
-compile 'com.surveymonkey:surveymonkey-android-sdk:1.0.5'
+compile 'com.surveymonkey:surveymonkey-android-sdk:1.0.6'
 ```
 
 #### Step 2: Set up your SDK Collector
@@ -76,7 +76,7 @@ sdkInstance.onStart(this, [SAMPLE_APP_NAME], [SAMPLE_REQUEST_CODE], [SAMPLE_SURV
 ```
 This will check to see if the user should be prompted to take your survey (i.e. if (timeSinceLastSurveyPrompt > maxTimeIntervalBetweenSurveyPrompts)).
 
-If you are a Platinum user and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
+If you are a PREMIER user and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
 ```java
 sdkInstance.onStart(this, [SAMPLE_APP_NAME], [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH], [SAMPLE_CUSTOM_VARIABLES_DICTIONARY]);
 ```
@@ -89,7 +89,7 @@ To present a survey for the user to take, call:
 sdkInstance.startSMFeedbackActivityForResult(this, [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH]);
 ```
 
-If you are a Platinum user and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
+If you are a PREMIER user and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
 ```java
 sdkInstance.startSMFeedbackActivityForResult(this, [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH], [SAMPLE_CUSTOM_VARIABLES_DICTIONARY]);
 ```
@@ -128,13 +128,13 @@ Many apps have a slide-out menu that allows their users to access a variety of i
 
 *How can I route my app users to different flows based on their survey response?*
 
-If you have a GOLD plan or higher, you can program your app to route your users into different flows based on their responses to your survey. For example, if a user responds to your in-app feedback survey and gives your app a 5-star rating, your app could take that user down the “5-Star Rating Flow” into the app store to rate your app. You could also take a user down the “Needs Improvement Flow” to the help center in your app.
+If you have a ADVANTAGE plan or higher, you can program your app to route your users into different flows based on their responses to your survey. For example, if a user responds to your in-app feedback survey and gives your app a 5-star rating, your app could take that user down the “5-Star Rating Flow” into the app store to rate your app. You could also take a user down the “Needs Improvement Flow” to the help center in your app.
 
 *Is the mobile SDK free?*
 
-Yes, the mobile SDK can be incorporated into your app with any SurveyMonkey plan. However, developers must upgrade to GOLD or higher to take actions based on responses to survey questions (prompt users who report high satisfaction with your app to review it).
+Yes, the mobile SDK can be incorporated into your app with any SurveyMonkey plan. However, developers must upgrade to ADVANTAGE or higher to take actions based on responses to survey questions (prompt users who report high satisfaction with your app to review it).
 
-[Custom variables](http://help.surveymonkey.com/articles/en_US/kb/What-are-custom-variables-and-how-do-I-use-them) are available in PLATINUM plans.
+[Custom variables](http://help.surveymonkey.com/articles/en_US/kb/What-are-custom-variables-and-how-do-I-use-them) are available in PREMIER plans.
 
 *How can I style the survey?  How will it look on a mobile device?*
 
