@@ -157,3 +157,7 @@ You can create one survey and set up multiple collectors to help you track where
 *How do I localize the survey for various locations?*
 
 We recommend creating multiple [surveys](http://help.surveymonkey.com/articles/en_US/kb/How-can-I-create-two-surveys-and-direct-respondents-to-one-version), with the survey translated into different languages.
+
+*What is the minimum Android version supported?
+
+The minsdk for this library is Api 11 (Android 3.x)
