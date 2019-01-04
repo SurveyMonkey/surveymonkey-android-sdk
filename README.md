@@ -160,4 +160,4 @@ We recommend creating multiple [surveys](http://help.surveymonkey.com/articles/e
 
 *What is the minimum Android version supported?
 
-The minsdk for this library is Api 11 (Android 3.x)
+As of version 2.0.0, the minsdk for this library is Api 21 (Android 5.x)
