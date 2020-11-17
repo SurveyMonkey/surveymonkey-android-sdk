@@ -76,7 +76,7 @@ sdkInstance.onStart(this, [SAMPLE_APP_NAME], [SAMPLE_REQUEST_CODE], [SAMPLE_SURV
 ```
 This will check to see if the user should be prompted to take your survey (i.e. if (timeSinceLastSurveyPrompt > maxTimeIntervalBetweenSurveyPrompts)).
 
-If you are a PREMIER user and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
+If you are on Advantage Plan or higher and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
 ```java
 sdkInstance.onStart(this, [SAMPLE_APP_NAME], [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH], [SAMPLE_CUSTOM_VARIABLES_DICTIONARY]);
 ```
@@ -89,7 +89,7 @@ To present a survey for the user to take, call:
 sdkInstance.startSMFeedbackActivityForResult(this, [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH]);
 ```
 
-If you are a PREMIER user and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
+If you are on Advantage Plan or higher and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
 ```java
 sdkInstance.startSMFeedbackActivityForResult(this, [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH], [SAMPLE_CUSTOM_VARIABLES_DICTIONARY]);
 ```
@@ -134,7 +134,7 @@ If you have a ADVANTAGE plan or higher, you can program your app to route your u
 
 Yes, the mobile SDK can be incorporated into your app with any SurveyMonkey plan. However, developers must upgrade to ADVANTAGE or higher to take actions based on responses to survey questions (prompt users who report high satisfaction with your app to review it).
 
-[Custom variables](http://help.surveymonkey.com/articles/en_US/kb/What-are-custom-variables-and-how-do-I-use-them) are available in PREMIER plans.
+[Custom variables](http://help.surveymonkey.com/articles/en_US/kb/What-are-custom-variables-and-how-do-I-use-them) are available in Advantage Plan or higher.
 
 *How can I style the survey?  How will it look on a mobile device?*
 
