@@ -1,11 +1,12 @@
-package com.surveymonkey.surveymonkeyandroidsdkexample;
+package com.surveymonkey.simplesurvey;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.surveymonkey.surveymonkeyandroidsdk.SurveyMonkey;
 import com.surveymonkey.surveymonkeyandroidsdk.utils.SMError;
@@ -14,7 +15,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class SimpleActivity extends Activity {
+public class SimpleActivity extends AppCompatActivity {
 
     public static final int SM_REQUEST_CODE = 0;
     public static final String SM_RESPONDENT = "smRespondent";

@@ -11,56 +11,69 @@ Want to improve your product and app store ratings? The SurveyMonkey Mobile Feed
 ### Steps To Integrate
 
 #### Step 1: Download Mobile SDK
-Download the [latest release](https://github.com/SurveyMonkey/surveymonkey-android-sdk/releases) or clone the SDK.
-```bash
-git clone https://github.com/SurveyMonkey/surveymonkey-android-sdk.git
-```
-**OR**
 
-Install via Maven (jCenter):
+Gradle (mavenCentral):
+```groovy
+implementation 'com.surveymonkey:surveymonkey-android-sdk:3.0.1'
+```
+or
+
+Install via Maven (mavenCentral):
 ```xml
 <dependency>
-  <groupId>com.surveymonkey</groupId>
-  <artifactId>surveymonkey-android-sdk</artifactId>
-  <version>2.0.0</version>
-  <type>pom</type>
+   <groupId>com.surveymonkey</groupId>
+   <artifactId>surveymonkey-android-sdk</artifactId>
+   <version>3.0.1</version>
 </dependency>
-```
-or Gradle (jCenter):
+``` 
+
+**OR**
+
+Download the [latest release](https://github.com/SurveyMonkey/surveymonkey-android-sdk/releases) 
+
+**Importing to Android Studio**
+
+1. From the menu bar, click **File -> Project Structure -> Dependencies -> JAR/AAR dependency**
+2. Provide a path to the  **surveymonkey_android_sdk.aar** directory that is contained in the **surveymonkeyandroidsdk** repo
+3. Select the **surveymonkey_android_sdk.aar** file
+4. In your **AndroidManifest.xml** file, make sure you\'ve included the `<uses-permission android:name="android.permission.INTERNET"/>` permission
+5. Add following dependencies to your **build.gradle** file
 ```groovy
-implementation 'com.surveymonkey:surveymonkey-android-sdk:2.0.0'
-```
+   implementation "com.squareup.retrofit2:retrofit:$latestversion"
+   implementation "com.squareup.retrofit2:converter-gson:$latestversion"  
+   implementation "com.squareup.okhttp3:logging-interceptor:$latestversion"  
+   implementation "com.squareup.retrofit2:converter-scalars:$latestversion"   
+   implementation "androidx.lifecycle:lifecycle-runtime-ktx:$latestversion"
+   ```
+6. Make sure your **build.gradle** file has `implementation project(':surveymonkey_android_sdk')` under `dependencies {}`
+
 
 #### Step 2: Set up your SDK Collector
 You must create your survey and set up your SDK Collector in [www.surveymonkey.com](https://www.surveymonkey.com).
 
 1. Once you create your survey, navigate to the **Collect** tab and select **+New Collector > SDK** from the menu on the righthand side
 2. Click **Generate**. The code you generate is your **Survey Hash**, you'll **Copy** this and use it to point the SDK to your survey in the steps below
+   <img  alt="sdk_collector" src="https://user-images.githubusercontent.com/119406475/227167584-a52bf4b4-1531-4cc7-8fe6-f052d01d2c05.png">
 
-<img src=https://raw.githubusercontent.com/SurveyMonkey/surveymonkey-android-sdk/master/images/sdk_collector.png />
-
-### Step 3: Importing to Android Studio
-
-1. From the menu bar, click **File -> New Module -> Import .JAR or .AAR package**
-2. Navigate to the **surveymonkeyandroidsdk** directory that is contained in the **surveymonkeyandroidsdk** repo
-3. Select the **surveymonkey-android-sdk.aar** file and click Finish
-4. In your **AndroidManifest.xml** file, make sure you've included the `<uses-permission android:name="android.permission.INTERNET"/>` permission
-5. Make sure your **build.gradle** file has `compile project(':surveymonkey_android_sdk')` under `dependencies {}`
-
-### Step 4: Integrate the SurveyMonkey SDK with your app
+### Step 3: Integrate the SurveyMonkey SDK with your app
 
 1. Import the SDK
-`import com.surveymonkey.surveymonkeyandroidsdk.SurveyMonkey;` and (for error handling)
-`import com.surveymonkey.surveymonkeyandroidsdk.utils.SMError;`
+   `import com.surveymonkey.surveymonkeyandroidsdk.SurveyMonkey;` and (for error handling)
+   `import com.surveymonkey.surveymonkeyandroidsdk.utils.SMError;`
 2. Initialize the SDK: `private SurveyMonkey sdkInstance = new SurveyMonkey();`
 
 ##### Important consideration
+SurveyMonkey Android SDK requires androidx.appcompat.app.AppCompatActivity context .
+For ex-
+```java
+sdkInstance.onStart(appCompatActivityContext, [SAMPLE_APP_NAME], [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH], [SAMPLE_CUSTOM_VARIABLES_DICTIONARY]);
+```
 The SurveyMonkey Feedback SDK makes use of the `startActivityForResult(Intent, int)` method lifecycle - thus, if you want to consume the respondent data returned by our SDK, you'll need to implement `onActivityResult()` in whichever activity you present surveys from.
 
 The survey respondent data is returned as JSON. To parse it, implement the following in your `onActivityResult()`:
 ```java
 String respondent = intent.getStringExtra("smRespondent");
-JSONObject surveyResponse = new JSONObject(respondent);
+        JSONObject surveyResponse = new JSONObject(respondent);
 ```
 
 If `resultCode != RESULT_OK` in your `onActivityResult`, an error has occurred. To obtain and parse the error into an SMError object, call:
@@ -160,4 +173,4 @@ We recommend creating multiple [surveys](http://help.surveymonkey.com/articles/e
 
 *What is the minimum Android version supported?
 
-As of version 2.0.0, the minsdk for this library is Api 21 (Android 5.x)
+As of version 3.0.1, the minsdk for this library is Api 21 (Android 5.x)
