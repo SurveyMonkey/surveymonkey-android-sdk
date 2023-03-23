@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.2"
+    compileSdkVersion 33
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.surveymonkey.simplesurvey"
-        minSdkVersion 9
-        targetSdkVersion 23
+        minSdkVersion 21
+        targetSdkVersion 33
         versionCode 1
         versionName "1.0"
     }
@@ -20,8 +20,11 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.1.1'
-    compile 'com.surveymonkey:surveymonkey-android-sdk:1.0.5'
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.fragment:fragment:1.5.5'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    testImplementation 'junit:junit:4.12'
+
+    implementation 'com.surveymonkey:surveymonkey-android-sdk:3.0.1'
+    implementation 'com.google.android.material:material:1.8.0'
 }
