@@ -87,7 +87,7 @@ To kick off the SurveyMonkey Feedback SDK Intercept process, call the following 
 ```java
 sdkInstance.onStart(this, [SAMPLE_APP_NAME], [SAMPLE_REQUEST_CODE], [SAMPLE_SURVEY_HASH]);
 ```
-This will check to see if the user should be prompted to take your survey (i.e. if (timeSinceLastSurveyPrompt > maxTimeIntervalBetweenSurveyPrompts)).
+This will initialise the SDK and check to see if the user should be prompted to take your survey (i.e. if (timeSinceLastSurveyPrompt > maxTimeIntervalBetweenSurveyPrompts)).
 
 If you are on Advantage Plan or higher and want to include custom variables with each survey response, create a flat JSONObject with your custom variables and use:
 ```java
