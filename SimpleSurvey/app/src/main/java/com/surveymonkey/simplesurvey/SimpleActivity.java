@@ -30,13 +30,13 @@ public class SimpleActivity extends AppCompatActivity {
     public static final String SAMPLE_APP = "Sample App";
     public static final String SURVEY_HASH = "LBQK27G";
     // Initialize the SurveyMonkey SDK like so
-    private SurveyMonkey s = new SurveyMonkey();
+    private final SurveyMonkey s = new SurveyMonkey();
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        //Here we're setting up the SurveyMonkey Intercept Dialog -- the user will be prompted to take the survey 3 days after app install.
+        //Here we're initialising the SDK and setting up the SurveyMonkey Intercept Dialog -- the user will be prompted to take the survey 3 days after app install.
         // Once prompted, the user will be reminded to take the survey again in 3 weeks if they decline or 3 months if they consent to take the survey.
         // The onStart method can be overloaded so that you can supply your own prompts and intervals -- for more information, see our documentation on Github.
         s.onStart(this, SAMPLE_APP, SM_REQUEST_CODE, SURVEY_HASH);
