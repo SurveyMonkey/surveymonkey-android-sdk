@@ -1,3 +1,6 @@
+## 3.0.5
+- Follow up of bugs after ver 3.0.4
+
 ## 3.0.4
 - Handled JSONException
 - Removed unwanted resource files
