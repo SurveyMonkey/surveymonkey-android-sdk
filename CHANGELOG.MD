@@ -1,3 +1,8 @@
+## 3.0.6
+- Fix for crash UninitializedPropertyException
+- Updated compileSDK and targetSDKVersion to 34
+- Fix for Crash if there is no connectivity
+
 ## 3.0.5
 - Follow up of bugs after ver 3.0.4
 
