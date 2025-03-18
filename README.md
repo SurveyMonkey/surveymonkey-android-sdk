@@ -14,7 +14,7 @@ Want to improve your product and app store ratings? The SurveyMonkey Mobile Feed
 
 Gradle (mavenCentral):
 ```groovy
-implementation 'com.surveymonkey:surveymonkey-android-sdk:3.0.6'
+implementation 'com.surveymonkey:surveymonkey-android-sdk:3.0.7'
 ```
 or
 
@@ -23,7 +23,7 @@ Install via Maven (mavenCentral):
 <dependency>
    <groupId>com.surveymonkey</groupId>
    <artifactId>surveymonkey-android-sdk</artifactId>
-   <version>3.0.6</version>
+   <version>3.0.7</version>
 </dependency>
 ``` 
 

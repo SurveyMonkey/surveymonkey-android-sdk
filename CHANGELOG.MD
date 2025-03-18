@@ -1,3 +1,6 @@
+## 3.0.7
+- Added functionality - support for add image/file questions from webview
+
 ## 3.0.6
 - Fix for crash UninitializedPropertyException
 - Updated compileSDK and targetSDKVersion to 34
