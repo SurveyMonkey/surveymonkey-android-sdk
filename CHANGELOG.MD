@@ -1,3 +1,6 @@
+## 3.0.8
+- Fix for Hardcoded FileProvider Authority
+
 ## 3.0.7
 - Added functionality - support for add image/file questions from webview
 
